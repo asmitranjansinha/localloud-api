@@ -11,7 +11,7 @@ import { JwtModule } from '../jwt/jwt.module';
         JwtModule,
     ],
     controllers: [UserController],
-    providers: [UserService],
+    providers: [UserService, User],
     exports: [UserService], // Export the UserService if needed by other modules
 })
 export class UserModule { }
