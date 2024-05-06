@@ -14,7 +14,6 @@ export class AuthService {
 
     async validateUser(username: string, password: string): Promise<any> {
         const user = await this.userService.findByUsername(username);
-        console.log(user);
         if (!user) {
             return null; // User not found
         }
@@ -45,8 +44,6 @@ export class AuthService {
 
         // Create the new user
         const newUser = await this.userService.createUser(username, password);
-
-        console.log(newUser);
 
         // Log in the new user and return the access token
         return this.login(newUser);
