@@ -43,7 +43,7 @@ export class UserService {
         return this.userRepository.save(result);
     }
 
-    async createUser(username: string, password: string): Promise<string> {
+    async createUser(username: string, password: string) {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = this.userRepository.create({
@@ -62,6 +62,6 @@ export class UserService {
 
         await this.userRepository.save(newUser);
 
-        return token;
+        return newUser;
     }
 }

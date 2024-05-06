@@ -29,9 +29,10 @@ export class AuthService {
     }
 
     async login(user: any) {
-        const payload = { username: user.username, sub: user.userId };
+        const payload = { username: user.username, sub: user.id };
         return {
             access_token: this.jwtService.generateToken(payload),
+            id: user.id,
         };
     }
 
@@ -44,6 +45,8 @@ export class AuthService {
 
         // Create the new user
         const newUser = await this.userService.createUser(username, password);
+
+        console.log(newUser);
 
         // Log in the new user and return the access token
         return this.login(newUser);
