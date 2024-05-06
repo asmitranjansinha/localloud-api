@@ -1,5 +1,5 @@
 // auth.controller.ts
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, HttpException, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 
 @Controller('auth')
@@ -10,7 +10,7 @@ export class AuthController {
     async login(@Body() body: { username: string; password: string }) {
         const user = await this.authService.validateUser(body.username, body.password);
         if (user === null) {
-            return { message: 'Invalid credentials' };
+            throw new HttpException('Invalid credentials', 401);
         }
         return this.authService.login(user);
     }
@@ -21,7 +21,7 @@ export class AuthController {
             const user = await this.authService.register(body.username, body.password);
             return user;
         } catch (error) {
-            return { error: error.message };
+            throw new HttpException(error.message, 401);
         }
     }
 }
