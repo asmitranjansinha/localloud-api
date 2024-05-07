@@ -10,6 +10,33 @@ export class Post {
     @Column()
     postContent: string;
 
+    @Column({ default: false })
+    isPoll: boolean;
+
+    @Column({ default: "" })
+    pollA: string;
+
+    @Column({ default: "" })
+    pollB: string;
+
+    @Column({ default: "" })
+    pollC: string;
+
+    @Column({ default: "" })
+    pollD: string;
+
+    @Column({ default: 0 })
+    pollAVotes: number;
+
+    @Column({ default: 0 })
+    pollBVotes: number;
+
+    @Column({ default: 0 })
+    pollCVotes: number;
+
+    @Column({ default: 0 })
+    pollDVotes: number;
+
     @Column({ default: 0 })
     upvotes: number;
 
