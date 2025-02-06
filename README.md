@@ -1,73 +1,171 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# 🌍 LocalLoud API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+LocalLoud API is the backend service for the **LocalLoud** mobile application, built with **NestJS**. It provides the necessary APIs for community-driven discussions, voting systems, and user authentication. This project is designed to work seamlessly with the [LocalLoud Flutter frontend](https://github.com/asmitranjansinha/localloud).  
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+## ✨ Features  
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **🗣 Community-Based Discussions** - APIs to create, read, update, and delete community posts.  
+- **🗳 Voting System** - APIs to create and participate in polls.  
+- **🔑 User Authentication** - Secure user authentication and authorization using JWT.  
+- **📡 RESTful APIs** - Clean and well-structured RESTful endpoints.  
+- **🧩 Modular Architecture** - Organized codebase with a modular structure for scalability.  
 
-## Installation
+---
 
-```bash
-$ yarn install
+## 🛠 Tech Stack  
+
+- **🚀 Framework**: NestJS  
+- **📦 Package Manager**: Yarn  
+- **💾 Database**: MySQL & SQLite3  
+- **🔐 Authentication**: JWT (JSON Web Tokens)  
+- **⚙ ORM**: TypeORM  
+
+---
+
+## 📂 Project Structure  
+
+```
+📦 localloud-api
+ ┣ 📂 src
+ ┃ ┣ 📂 modules
+ ┃ ┃ ┗ 📂 example
+ ┃ ┃ ┃ ┣ 📄 example.controller.ts
+ ┃ ┃ ┃ ┣ 📄 example.service.ts
+ ┃ ┃ ┃ ┗ 📄 example.module.ts
+ ┃ ┣ 📄 app.controller.ts
+ ┃ ┣ 📄 app.module.ts
+ ┃ ┗ 📄 main.ts
+ ┣ 📂 test
+ ┃ ┗ 📄 (test files)
+ ┣ 📄 .env
+ ┣ 📄 .gitignore
+ ┣ 📄 package.json
+ ┣ 📄 yarn.lock
+ ┗ 📄 README.md
 ```
 
-## Running the app
+---
+
+## 📦 Dependencies  
+
+This project uses the following key dependencies:  
+
+### 🔧 Core Dependencies  
+
+- `@nestjs/core` - Core framework for building scalable server-side applications.  
+- `@nestjs/common` - Common utilities and decorators for NestJS.  
+- `@nestjs/platform-express` - Express platform for NestJS.  
+- `typeorm` - ORM for database interactions.  
+- `mysql2` & `sqlite3` - MySQL & SQLite3 database support.  
+- `bcrypt` - Secure password hashing.  
+- `jsonwebtoken` - JSON Web Token (JWT) for authentication.  
+
+### 🛠 Development Dependencies  
+
+- `@nestjs/cli` - NestJS command-line interface.  
+- `@nestjs/schematics` - Schematics for scaffolding NestJS projects.  
+- `typescript` - TypeScript support.  
+- `jest` - Testing framework.  
+- `eslint` & `prettier` - Linting and code formatting.  
+
+To install dependencies, run:  
 
 ```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+yarn install
 ```
 
-## Test
+---
 
-```bash
-# unit tests
-$ yarn run test
+## 🚀 Installation  
 
-# e2e tests
-$ yarn run test:e2e
+1. **Clone the repository:**  
 
-# test coverage
-$ yarn run test:cov
-```
+   ```bash
+   git clone https://github.com/yourusername/localloud-api.git
+   cd localloud-api
+   ```
 
-## Support
+2. **Install dependencies:**  
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+   ```bash
+   yarn install
+   ```
 
-## Stay in touch
+3. **Set up environment variables:**  
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+   Create a `.env` file in the root directory and add the necessary environment variables (e.g., database connection string, JWT secret).  
 
-## License
+   Example `.env` file:  
 
-Nest is [MIT licensed](LICENSE).
+   ```env
+   DATABASE_URL=your_database_url
+   JWT_SECRET=your_jwt_secret
+   ```
+
+4. **Run the application:**  
+
+   ```bash
+   yarn start
+   ```
+
+5. **Access the API:**  
+
+   The API will be available at `http://localhost:3000/api`.  
+
+---
+
+## 🏗 Available Scripts  
+
+These scripts help in development, testing, and production:  
+
+| Command                  | Description                                 |
+|--------------------------|---------------------------------------------|
+| `yarn start`            | 🚀 Starts the application                   |
+| `yarn start:dev`        | 🔄 Starts the app in watch mode for development |
+| `yarn start:debug`      | 🐞 Starts the app in debug mode             |
+| `yarn start:prod`       | ⚡ Runs the compiled app in production mode  |
+| `yarn build`           | 🏗 Builds the project                        |
+| `yarn lint`            | 🧹 Lints the code with ESLint                 |
+| `yarn format`          | 🎨 Formats the code using Prettier           |
+| `yarn test`            | 🧪 Runs all tests using Jest                 |
+| `yarn test:watch`      | 👀 Runs Jest in watch mode                   |
+| `yarn test:cov`        | 📊 Generates a test coverage report         |
+| `yarn test:debug`      | 🛠 Runs Jest with debugging enabled          |
+| `yarn test:e2e`        | 🔎 Runs end-to-end tests                     |
+
+---
+
+## 🤝 Contributing  
+
+Contributions are welcome! Follow these steps to contribute:  
+
+1. **Fork the repository.**  
+2. **Create a new branch:**  
+
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+
+3. **Commit your changes:**  
+
+   ```bash
+   git commit -m '✨ Add feature XYZ'
+   ```
+
+4. **Push to the branch:**  
+
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+
+5. **Open a pull request.**  
+
+---
+
+## 📜 License  
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
+
+---
